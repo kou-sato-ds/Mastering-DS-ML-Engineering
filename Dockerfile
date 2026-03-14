@@ -10,5 +10,5 @@ COPY . /app
 # 4. ライブラリ構築：キャッシュを保持せず numpy と pandas をインストール
 RUN pip install --no-cache-dir numpy pandas
 
-# 5. 実行コマンド：コンテナ起動時に notebooks/3.py を実行する
-CMD ["python", "notebooks/3.py"]
+# 5. コンテナ起動時に、名前を変えた step3.py を実行する
+CMD ["python", "notebooks/step3.py"]

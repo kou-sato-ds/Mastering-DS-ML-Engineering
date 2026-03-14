@@ -2,7 +2,7 @@
 # ※ファイル名が数字で始まる場合、通常のimportでエラーが出る時は 
 # import importlib; outlier_mod = importlib.import_module("2") 
 # のような手法を使いますが、まずはこのシンプルな形で試しましょう。
-from 2 import handle_outliers
+from step2 import handle_outliers
 import numpy as np
 
 def main():

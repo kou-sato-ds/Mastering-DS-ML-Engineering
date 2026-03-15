@@ -1,0 +1,10 @@
+# Terraformのバイナリやプラグインを無視
+.terraform/
+*.exe
+
+# 状態管理ファイルを無視（機密情報が含まれる場合があるため）
+*.tfstate
+*.tfstate.backup
+
+# 認証情報を無視
+.aws/

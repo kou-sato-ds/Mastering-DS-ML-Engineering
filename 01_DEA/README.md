@@ -26,7 +26,7 @@ Terraformを使用して、データレイクの基盤となるS3バケットを
 
 ### 3. エビデンス
 #### Terraformによるリソース構築
-![Terraform Apply](images/terraform-code.png)
+![Terraform Apply](infrastructure/images/terraform-code.png)
 
 #### AWSコンソールでの実体確認
-![AWS Console](images/aws-s3-console.png)
+![AWS Console](infrastructure/images/aws-s3-console.png)

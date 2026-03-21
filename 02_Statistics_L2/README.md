@@ -1,7 +1,7 @@
 # 📊 02_Statistics_L2: Statistics for Data Science
 
 ### 🏗️ Statistical Data Pipeline Architecture
-![Pipeline Architecture](02_Statistics_L2\images\architecture_pipeline.drawio.png)
+![Pipeline Architecture](02_Statistics_L2/images/architecture_pipeline.drawio.png)
 
 > **Design Note**: 
 > 本パイプラインは、AWS環境におけるデータ品質の自動担保を目的に設計されています。

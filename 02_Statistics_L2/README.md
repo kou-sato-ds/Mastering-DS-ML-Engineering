@@ -2,6 +2,7 @@
 
 ### 🏗️ Statistical Data Pipeline Architecture
 ![Pipeline Architecture](./images/architecture_pipeline.drawio.png)
+
 > **Design Note**: 
 > 本パイプラインは、AWS環境におけるデータ品質の自動担保を目的に設計されています。
 > Rawデータに対して $1.5 \times IQR$ 法によるクレンジングを行い、
@@ -32,7 +33,7 @@
 
 ### 2. 数学的背景
 #### 標準化（Z-score）
-データを平均0、標準偏差1の標準正規分布に近似させます。 $z = \frac{x - \mu}{\sigma}$
+データを平均0、標準偏差1の標準正規分布に近似させます。$$z = \frac{x - \mu}{\sigma}$$
 
 #### 3σ（シグマ）法
 平均から $\pm3\sigma$ 以内に全データの **99.7%** が含まれる性質を利用し、$|Z| > 3$ を異常と判定します。
@@ -51,3 +52,9 @@
 
 ![Z-score Plot](./images/zscore_plot.png)
 ![Z-score Scatter](./images/zscore_scatter.png)
+
+---
+
+## 🛠️ 実装プロジェクト3：推測統計（信頼区間）
+
+現在、標本データから母集団の平均を推定する「区間推定」を実装中。t分布を用いた95%信頼区間の算出により、データの真値を確率的に提示するロジックを構築しています。

@@ -108,7 +108,7 @@ $$
 ### 3. クラウド実装のエビデンス
 クラウド上での正常動作を証明する実行ログおよび、予算管理設定を構築しました。
 
-| Glue Job Success | CloudWatch Logs (Outlier Detection) | AWS Budgets (Alert Setting) |
+| Glue Job Success | CloudWatch Logs (Outlier Detection) | AWS S3 (CSV → Parquet) |
 | :---: | :---: | :---: |
 | ![Glue Success](./images/glue_success.png) | ![CloudWatch Logs](./images/cloudwatch_logs.png) | ![parquet](./images/parquet.png) |
 

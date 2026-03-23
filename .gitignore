@@ -8,3 +8,12 @@
 
 # 認証情報を無視
 .aws/
+
+# データファイル（重い・規約制限のあるもの）
+data/
+*.csv
+*.parquet
+
+# Pythonキャッシュ
+__pycache__/
+.ipynb_checkpoints/

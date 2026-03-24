@@ -11,3 +11,5 @@ resource "aws_s3_bucket" "my_study_bucket" {
     Environment = "Dev"
   }
 }
+
+# 2026-03-24: Terraform Initialized and Plan confirmed. Ready for apply.

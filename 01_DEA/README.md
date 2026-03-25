@@ -30,3 +30,21 @@ Terraformを使用して、データレイクの基盤となるS3バケットを
 
 #### AWSコンソールでの実体確認
 ![AWS Console](infrastructure/images/aws-s3-console.png)
+
+## 🛠️ Data Engineering: Infrastructure as Code (IaC)
+
+### 01_DEA/infrastructure
+AWSのデータレイク基盤をTerraformで構築・管理しています。
+
+- **使用技術**: Terraform (v1.x), AWS (S3)
+- **実施内容**: 
+  - S3バケットの自動プロビジョニング
+  - `.gitignore` によるステートファイル（機密情報）の厳格な管理
+  - 変数（`variables.tf`）を利用した環境の柔軟な切り替え
+
+#### 🚀 実行エビデンス
+Terraformによって1秒でリソースが生成されることを確認済みです。
+
+| Terraform Apply ログ | AWS コンソール確認 |
+| :---: | :---: |
+| ![Apply Log](infrastructure/docs/images/terraform_apply_log.png) | ![AWS Console](infrastructure/docs/images/aws_s3_console2.png) |

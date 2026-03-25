@@ -26,10 +26,10 @@ Terraformを使用して、データレイクの基盤となるS3バケットを
 
 ### 3. エビデンス
 #### Terraformによるリソース構築
-![Terraform Apply](infrastructure/images/terraform-code.png)
+![Terraform Apply](infrastructure/docs/images/terraform-code.png)
 
 #### AWSコンソールでの実体確認
-![AWS Console](infrastructure/images/aws-s3-console.png)
+![AWS Console](infrastructure/docs/images/aws-s3-console.png)
 
 ## 🛠️ Data Engineering: Infrastructure as Code (IaC)
 

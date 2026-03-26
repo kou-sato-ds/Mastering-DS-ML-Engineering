@@ -104,20 +104,18 @@ sequenceDiagram
 ### 3\. 実行エビデンス
 
 #### 🚀 開発環境と実行ログ
-
 VS Code上でのディレクトリ管理および、PythonスクリプトによるS3へのアップロード成功ログです。
 
 | 項目 | エビデンス画像 |
 | :--- | :--- |
-| **ディレクトリ構成 (VS Code)** |![Apply Log](infrastructure\docs\images\vscode.png)|
-| **アップロード成功ログ** |![Apply Log](infrastructure\docs\images\Upload_log.png)|
+| **ディレクトリ構成 (VS Code)** | ![VS Code](infrastructure/docs/images/vscode.png) |
+| **アップロード成功ログ** | ![Upload Log](infrastructure/docs/images/uploadlog.png) |
 
 #### 🏗️ AWSコンソールでの実体確認
-
 プログラム経由で作成されたフォルダおよびファイルが、クラウド上に正しく反映されていることを確認しました。
 
 | 項目 | エビデンス画像 |
 | :--- | :--- |
-| **S3バケット内のオブジェクト一覧** |![Apply Log](infrastructure\docs\images\aws-s3-console3.png)|
+| **S3バケット内のオブジェクト一覧** | ![AWS Console](infrastructure/docs/images/aws-s3-console3.png) |
 
 > **Summary**: 手動操作を一切排除し、インフラ構築からデータ投入までを「コード」で完結させました。

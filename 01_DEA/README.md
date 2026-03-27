@@ -52,26 +52,23 @@ sequenceDiagram
     Note right of GH: 実績をREADMEに集約
 ```
 
-### 3\. 実行エビデンス (Sprint 1)
+### 3. 実行エビデンス (Sprint 1)
 
 #### 🚀 インフラ構築とデータ投入
-
 手動操作を一切排除し、構築から投入までを「コード」で完結させています。
 
 | 項目 | エビデンス画像 |
 | :--- | :--- |
-| **Terraform Apply ログ** |[Terraform Apply Log](infrastructure/docs/images/terraform_apply_log.png)|
-| **アップロード成功ログ** |[Terraform Upload Log](infrastructure/docs/images/uploadlog.png)|
-| **AWSコンソール確認** |[Terraform Upload Log](infrastructure/docs/images/aws-s3-console3.png)|
+| **Terraform Apply ログ** | ![Apply Log](infrastructure/docs/images/terraform_apply_log.png) |
+| **アップロード成功ログ** | ![Upload Log](infrastructure/docs/images/uploadlog.png) |
+| **AWSコンソール確認** | ![AWS Console](infrastructure/docs/images/aws-s3-console3.png) |
 
 #### 🔍 データの取得とバリデーション
-
 取得したデータに対し、プログラムによる自動検証（品質保証）を実施したログです。
 
 | 項目 | 内容 | 実行ログ |
 | :--- | :--- | :---: |
-| **S3 Read & Validation** | 行数、単語数、キーワード "Python" の含有チェック |[Terraform Upload Log]([S3 Read & Validation](infrastructure\docs\images\s3_read_success.png)|
-
+| **S3 Read & Validation** | 行数、単語数、キーワード "Python" の含有チェック | ![S3 Read Success](infrastructure/docs/images/s3_read_success.png) |
 -----
 
 > **Summary**:

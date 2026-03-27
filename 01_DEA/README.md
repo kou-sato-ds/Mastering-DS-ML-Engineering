@@ -60,9 +60,9 @@ sequenceDiagram
 
 | 項目 | エビデンス画像 |
 | :--- | :--- |
-| **Terraform Apply ログ** |  |
-| **アップロード成功ログ** |  |
-| **AWSコンソール確認** |  |
+| **Terraform Apply ログ** |[Terraform Apply Log](infrastructure/docs/images/terraform_apply_log.png)|
+| **アップロード成功ログ** |[Terraform Upload Log](infrastructure/docs/images/uploadlog.png)|
+| **AWSコンソール確認** |[Terraform Upload Log](infrastructure/docs/images/aws-s3-console3.png)|
 
 #### 🔍 データの取得とバリデーション
 
@@ -70,7 +70,7 @@ sequenceDiagram
 
 | 項目 | 内容 | 実行ログ |
 | :--- | :--- | :---: |
-| **S3 Read & Validation** | 行数、単語数、キーワード "Python" の含有チェック |  |
+| **S3 Read & Validation** | 行数、単語数、キーワード "Python" の含有チェック |[Terraform Upload Log]([S3 Read & Validation](infrastructure\docs\images\s3_read_success.png)|
 
 -----
 

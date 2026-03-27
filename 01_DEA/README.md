@@ -13,8 +13,8 @@
 
 ## 📂 構成 (Directory Structure)
 
-  - [**infrastructure/**](https://www.google.com/search?q=./infrastructure/): TerraformによるAWSリソースの定義。
-  - [**src/**](https://www.google.com/search?q=./src/): データ転送・操作・バリデーション用のPythonスクリプト。
+  - [**infrastructure/**](01_DEA/infrastructure): TerraformによるAWSリソースの定義。
+  - [**src/**](01_DEA/src): データ転送・操作・バリデーション用のPythonスクリプト。
   - **docs/images/**: 構築および実行エビデンス（スクリーンショット）。
 
 -----

@@ -30,34 +30,36 @@
 
 ```mermaid
 sequenceDiagram
-    participant PC as Local PC (VS Code)
-    participant TF as Terraform (IaC)
-    participant PY as Python (boto3)
-    participant S3 as AWS S3 (Data Lake)
+    participant PC as Local PC (VS Code)
+    participant TF as Terraform (IaC)
+    participant PY as Python (boto3)
+    participant S3 as AWS S3 (Data Lake)
     participant Glue as AWS Glue (Catalog)
     participant Athena as Amazon Athena (Query)
-    participant GH as GitHub (Repository)
+    participant GH as GitHub (Repository)
 
-    Note over PC, Athena: 1. インフラ構築 & データ投入フェーズ
-    PC->>TF: terraform apply
-    TF->>S3: S3バケット作成
+    Note over PC, Athena: 1. インフラ構築 & データ投入フェーズ
+    PC->>TF: terraform apply
+    TF->>S3: S3バケット作成
     TF->>Glue: DB & クローラ作成
-    PC->>PY: upload_csv_data.py
-    PY->>S3: データのアップロード (csv_data/*.csv)
-    AWS-->>TF: 作成完了
+    PC->>PY: upload_csv_data.py
+    PY->>S3: データのアップロード (csv_data/*.csv)
+    
+    # 修正箇所:定義済みのS3からTFへ矢印を向ける
+    S3-->>TF: 作成完了
 
-    Note over PC, Athena: 2. データ整理 & 分析フェーズ
-    PC->>Glue: クローラ実行
-    Glue->>S3: CSVをスキャン
+    Note over PC, Athena: 2. データ整理 & 分析フェーズ
+    PC->>Glue: クローラ実行
+    Glue->>S3: CSVをスキャン
     Glue->>Glue: メタデータ（スキーマ）を自動登録
     PC->>Athena: SELECTクエリ実行
     Athena->>Glue: スキーマを参照
     Athena->>S3: 生データを読み取り
     Athena-->>PC: 結果を表示
 
-    Note over PC, GH: 3. 成果管理フェーズ
-    PC->>GH: git push origin main
-    Note right of GH: 実績をREADMEに集約
+    Note over PC, GH: 3. 成果管理フェーズ
+    PC->>GH: git push origin main
+    Note right of GH: 実績をREADMEに集約
 ```
 
 ### 3\. 実行エビデンス (Sprint 1: S3 Foundation)
@@ -77,9 +79,9 @@ sequenceDiagram
 
 取得したデータに対し、プログラムによる自動検証（品質保証）を実施したログです。
 
-| 項目 | 内容 | 実行ログ |
-| :--- | :--- | :---: |
-| **S3 Read & Validation** | 行数、単語数、キーワード "Python" の含有チェック |  |
+| 項目 | エビデンス画像 |
+| :--- | :--- |
+| **S3 Read & Validation** | ![S3 Read Success](01_DEA/infrastructure/docs/images/s3_read_success.png) |
 
 > **Summary (Sprint 1)**:
 > インフラの再現性（IaC）とデータの整合性（Validation）をコードで担保する基盤を確立しました。
@@ -110,8 +112,8 @@ S3上の生データをAWS Glueで自動スキャン（Schema Discovery）し、
 
 | 項目 | 内容 | エビデンス画像 |
 | :--- | :--- | :--- |
-| **Glue Schema Discovery** | CSVから `id`, `topic`, `status` を抽出 | ![Table Detail](01_DEA/infrastructure/docs/images/Table-Detail-AWS-Glue-Console-03-28.png) |
-| **Athena SQL Query** | S3上のデータをSQLで直接抽出 | ![Athena Query](01_DEA/infrastructure/docs/images/クエリエディタ-Athena-ap-northeast-1-03-28-2026.png) |
+| **Glue Schema Discovery** | CSVから `id`, `topic`, `status` を抽出 | ![Table Detail](01_DEA/infrastructure/docs/images/Table-Detail-AWS-Glue-Console.png) |
+| **Athena SQL Query** | S3上のデータをSQLで直接抽出 | ![Athena Query](01_DEA/infrastructure/docs/images/Atena-consle.png) |
 | **動的更新 (120%達成)** | インフラ変更なしで新規データ反映 | ![Athena Update](01_DEA/infrastructure/docs/images/image_2bf783.jpg) |
 
 > **Summary (Sprint 3)**:

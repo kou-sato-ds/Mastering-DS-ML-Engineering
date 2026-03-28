@@ -75,3 +75,18 @@ sequenceDiagram
 > インフラの再現性（IaC）とデータの整合性（Validation）をコードで担保する基盤を確立しました。検証完了後は `terraform destroy` を実行し、クラウドコストの最適化を徹底しています。
 
 -----
+
+### 4. 実行エビデンス (Sprint 2: Batch Processing)
+
+#### 🚀 複数ファイルの一括スキャンと自動バリデーション
+1つのファイル指定から、バケット内の全オブジェクトを自動検知して処理するパイプラインへ進化させました。
+
+| 項目 | エビデンス画像 |
+| :--- | :--- |
+| **S3コンソール (ファイル一覧)** | ![S3 Batch List](infrastructure/docs/images/s3_batch_list.png) |
+| **一括スキャン実行ログ** | ![Batch Execution Log](infrastructure/docs/images/batch_execution_log.png) |
+| **一括スキャン実行ログ2** | ![Batch Execution Log](infrastructure/docs/images/batch_execution_log2.png) |
+
+
+> **Summary (Sprint 2)**: 
+> `list_objects_v2` を活用し、データ量の増加に対応可能なスケーラブルな検知ロジックを実装。特定のキーワードに基づく品質チェックを全件自動で実施できることを確認しました。

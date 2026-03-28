@@ -14,9 +14,9 @@
 
 ## 📂 構成 (Directory Structure)
 
-  - [**infrastructure/**]: TerraformによるAWSリソース（S3, Glue, IAM）の定義。
-  - [**src/**]: データ転送、バリデーション、バッチ処理用のPythonスクリプト。
-  - [**docs/images/**]: 構築および実行エビデンス（スクリーンショット）。
+- **infrastructure/**: TerraformによるAWSリソース（S3, Glue, IAM）の定義。
+- **src/**: データ転送、バリデーション、バッチ処理用のPythonスクリプト。
+- **docs/images/**: 構築および実行エビデンス（スクリーンショット）。
 
 -----
 

@@ -70,10 +70,10 @@ sequenceDiagram
 
 | 項目 | エビデンス画像 |
 | :--- | :--- |
-| **Terraform Apply ログ** | ![Apply Log](01_DEA/infrastructure/docs/images/terraform_apply_log.png) |
-| **アップロード成功ログ** | ![Upload Log](01_DEA/infrastructure/docs/images/uploadlog.png) |
-| **AWSコンソール確認** | ![AWS Console](01_DEA/infrastructure/docs/images/aws-s3-console3.png) |
-| **S3 Read & Validation** | ![S3 Read Success](01_DEA/infrastructure/docs/images/s3_read_success.png) |
+| **Terraform Apply ログ** | ![Apply Log](infrastructure\docs\images\terraform_apply_log.png) |
+| **アップロード成功ログ** | ![Upload Log](infrastructure\docs\images\uploadlog.png) |
+| **AWSコンソール確認** | ![AWS Console](infrastructure\docs\images\aws-s3-console.png) |
+
 
 #### 🔍 データの取得とバリデーション
 
@@ -81,7 +81,7 @@ sequenceDiagram
 
 | 項目 | エビデンス画像 |
 | :--- | :--- |
-| **S3 Read & Validation** | ![S3 Read Success](01_DEA/infrastructure/docs/images/s3_read_success.png) |
+| **S3 Read & Validation** | ![S3 Read Success](infrastructure\docs\images\s3_read_success.png) |
 
 > **Summary (Sprint 1)**:
 > インフラの再現性（IaC）とデータの整合性（Validation）をコードで担保する基盤を確立しました。
@@ -96,8 +96,9 @@ sequenceDiagram
 
 | 項目 | エビデンス画像 |
 | :--- | :--- |
-| **S3コンソール (ファイル一覧)** | ![S3 Batch List](01_DEA/infrastructure/docs/images/s3_batch_list.png) |
-| **一括スキャン実行ログ** | ![Batch Execution Log](01_DEA/infrastructure/docs/images/batch_execution_log.png) |
+| **S3コンソール (ファイル一覧)** | ![S3 Batch List](infrastructure\docs\images\Table-Detail-AWS-Glue-Console2.png) |
+| **一括スキャン実行ログ** | ![Batch Execution Log](infrastructure\docs\images\batch_execution_log.png) |
+| **一括スキャン実行ログ2** | ![Batch Execution Log](infrastructure\docs\images\batch_execution_log2.png) |
 
 > **Summary (Sprint 2)**:
 > `list_objects_v2` を活用し、データ量の増加に対応可能な検知ロジックを実装。特定のキーワードに基づく品質チェックを全件自動で実施できることを確認しました。
@@ -112,9 +113,10 @@ S3上の生データをAWS Glueで自動スキャン（Schema Discovery）し、
 
 | 項目 | 内容 | エビデンス画像 |
 | :--- | :--- | :--- |
-| **Glue Schema Discovery** | CSVから `id`, `topic`, `status` を抽出 | ![Table Detail](01_DEA/infrastructure/docs/images/Table-Detail-AWS-Glue-Console.png) |
-| **Athena SQL Query** | S3上のデータをSQLで直接抽出 | ![Athena Query](01_DEA/infrastructure/docs/images/Atena-consle.png) |
-| **動的更新 (120%達成)** | インフラ変更なしで新規データ反映 | ![Athena Update](01_DEA/infrastructure/docs/images/image_2bf783.jpg) |
+| **Glue Schema Discovery** | CSVから `id`, `topic`, `status` を抽出 | ![Table Detail](infrastructure/docs/images/Table-Detail-AWS-Glue-Console2.png) |
+| **Athena SQL Query** | S3上のデータをSQLで直接抽出 | ![Athena Query](infrastructure\docs\images\Table-Detail-AWS-Glue-Console.png) |
+| **動的更新1 (120%達成)** | インフラ変更なしで新規データ反映 | ![Athena Update](infrastructure\docs\images\Table-Detail-AWS-Glue-Console3.png) |
+| **動的更新2 (120%達成)** | インフラ変更なしで新規データ反映 | ![Athena Update](infrastructure\docs\images\Table-Detail-AWS-Glue-Console4.png) |
 
 > **Summary (Sprint 3)**:
 > 「スキーマ・オン・リード」を実現。データの構造をGlue Data Catalogで一元管理することで、S3を「クエリ可能なデータベース」として活用する、疎結合で強力な分析基盤を確立しました。データの追加に対して分析側が自動追従することを確認し、パイプラインの動的な連携を実証しました。
